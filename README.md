@@ -1,11 +1,15 @@
-# Introduction to WebODM and OpenDroneMap
+# Introduction to WebODM and OpenDroneMap: A few notes
 
-### What is OpenDroneMap and what are it's capabilites?
+These notes are part of a short introduction to WebODM.  
+
+## What is OpenDroneMap and what are it's capabilites?
 
 * OpenDroneMap: An open source toolkit for aerial drone imagery.
-* Alternative to propiertary photogrammetric software.
+* Alternative to propiertary photogrammetric software, able to generate Orthophotos, Point Clouds, digital elevation models (DSM and DTM) and other products….
+* WebODM: A web based interface for OpenDroneMap 
 
-### Quality?
+
+## Quality?
 
 * Conference paper:
 
@@ -25,7 +29,13 @@ Vacca G. Overview of Open Source Software for Close Range Photogrammetry. ISPRS-
 
 ## Installation
 
-### Prerequisites
+Ways to install ODM:
+* Docker (Windows, MacOS, Linux)
+* Natively using Ubuntu 16.04 or later (or with Virtual Machine e.g. vagrant)
+* Windows WebODM installer is sold
+ https://WebODM.org
+
+### Prerequisites to install WebODM on Ubuntu 18.04
 
 * Docker and GIT
 
@@ -52,6 +62,8 @@ sudo groupadd docker
 sudo gpasswd -a student docker
 #activate the changes
 sudo newgrp docker
+```
+
 
 ### Install WebODM
 
@@ -59,10 +71,33 @@ sudo newgrp docker
 git clone https://github.com/OpenDroneMap/WebODM --config core.autocrlf=input --depth 1
 cd WebODM
 ./webodm.sh start
-
 ```
 
-### Launch WebODM
+
+### Installations for the introduction
+
+#### Virtual machine
+
+Further a virtual machine in the Ova2.0 (Open virtualisation) was generated; WebODM was installed insed OSGEOLive an Lubuntu based Live Linux distribution packed with GIS software. It can by using VirtualBox. Be aware, that you need enough diskspace (~40 GB). 
+*Docker inside a virtual machine, does this make sense?*
+
+OSGEOLive: https://live.osgeo.org/en/index.html
+
+#### Server based installation
+
+For your convencience WebODM was installed on a virtualisation server and can be used by you on request. The URL of the server is: http://141.89.192.147:8000/ The admin acount to enter the interface is:
+admin, the password:xxxxxx A user account can be accesd via: user / xxxxxx 
+
+* Server capacities:  
+    * Processor: 24 Xeon E7 v2/Xeon E5 v2/Core i7 Bridge
+    * RAM: 128 GB
+
+* Issues with the server installation:
+
+Uploading to VM Server sometimes is "incomplete":https://community.opendronemap.org/t/upload-kind-of-complete-but-hangs-after-progress-bar/1352
+
+## Launch WebODM
+
 
 ```
 1. Start container: ./webodm.sh start
@@ -71,44 +106,36 @@ cd WebODM
 
 ```
 
-
-
 ## Sample Data
 
+Examples to play around with WebODM
+https://github.com/OpenDroneMap/ODMdata
 
+In the intro this dataset is used:
 
+Geopark Kielce-Centrum Geoedukacji: https://github.com/merkato/odm_wietrznia
 
+### Explore the sample data: QGIS Photo Plugin: 
 
-## QGIS Photo Plugin: Import geotagged photos to qgis
-
-Helpul plugin to explore drone imagery: The plugin creates a layer which will contain the name of the picture, its directory, the date and time taken, altitude, longitude, latitude, azimuth, north, camera maker an
+The QGIS Photo Plugin is a plugin to import geotagged photos to QGIS. It's a helpul plugin to explore drone imagery: The plugin creates a layer which will contain the name of the picture, its directory, the date and time taken, altitude, longitude, latitude, azimuth, north, camera maker. 
 
 https://plugins.qgis.org/plugins/ImportPhotos/
 
 * Photo plugin
-     * Exif tools is a prerequisite:
+     * Exif tools is a prerequisite and can be installed via
 
 ```
 sudo apt-get install libimage-exiftool-perl perl-doc
 
 ```
 
-
-
-
-## Generate products: Orthophoto  and Point Cloud
+## Generate products:
 
 Orthophotos, Point Clouds, digital elevation models (DSM and DTM) and other products can be derived after uploading imagery. It' s a very easy to use drop down menu. 
+The process simply can be started with: *Start processing: Review -> start process*
 
 
-![Userinterface](/media/administrator/Harald_SSD/projects_harald/Intro_Web_ODM/Manual/bilder/user_interface.png "User interface")
-
-Start processing: Review -> start process
-
-
-
-
-## Access commandline
+## Go further I: Access the docker container and it's commandline
 
 * Get id of running docker container
 ```
@@ -121,22 +148,11 @@ docker exec -ti 5d402bd522f3 bash
  
 ```
 
-## Installation on Server and inside Virtual machine
+*But I did not manage to run ODM commands within the container*
 
-For your convencience WebODM was installed on a Virtualisation Server and can be used by you on request. The URL of the server is: http://141.89.192.147:8000/ The admin acount to enter the interface is:
-admin, the password:btgTk4zf6Z4KbiX A user account can be accesd via: user / @webodm2019
-
-* Server capacities:  
-    * 24 Xeon E7 v2/Xeon E5 v2/Core i7 Bridge   
-    * 
+## Go further II: Install ODM 
 
 
-Further a virtual machine in the Ova2.0 (Open virtualisation) was generated; WebODM was installed insed OSGEOLive an Lubuntu based Live Linux distribution packed with GIS software. It can by using VirtualBox. Be aware, that you need enough diskspace (~40 GB). 
-
-
-## Issues
-
-Uploading to VM Server sometimes is "incomplete":https://community.opendronemap.org/t/upload-kind-of-complete-but-hangs-after-progress-bar/1352
 
 
 ## Further reading
