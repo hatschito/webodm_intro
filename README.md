@@ -1,15 +1,21 @@
-# Introduction to WebODM and OpenDroneMap: A few notes
+# Introduction to WebODM and OpenDroneMap (ODM): A few notes
 
-These notes are part of a short introduction to WebODM.  
+These notes are part of a short introduction to WebODM. The motivation behind this introducion is to show, that an alternative to Agissoft Metashape or Pix4D exists. 
 
 ## What is OpenDroneMap and what are it's capabilites?
 
 * OpenDroneMap: An open source toolkit for aerial drone imagery.
 * Alternative to propiertary photogrammetric software, able to generate Orthophotos, Point Clouds, digital elevation models (DSM and DTM) and other products….
+ * Uses the  Scale invariant local features algorithm (SIFT) :https://www.youtube.com/watch?v=oKAnOzIu66c&t=31s
+Nice explanation from udemy
 * WebODM: A web based interface for OpenDroneMap 
+* ODM developers started to include MICMAC, *the holy grail?*:
+https://www.opendronemap.org/2019/05/nodemicmac-a-new-webodm-node/
 
 
 ## Quality?
+
+*There are not that much studys out there*
 
 * Conference paper:
 
@@ -17,8 +23,7 @@ Vacca G. Overview of Open Source Software for Close Range Photogrammetry. ISPRS-
 
   * Performance comparison of different photogrammetric software packages. Test object: Basilica of the Beata Vergine Assunta.
 
-  * Found points on 111 images shot by Canon EOS M3 with a sensor CMOS
-22.3x14.9 mm and a 24.2 Megapixel resolution
+  * Found points on 111 images shot by Canon EOS M3 with a sensor CMOS 22.3x14.9 mm and a 24.2 Megapixel resolution
 
   | Software          | Matched points          |
   | ----------------- |:-----------------------:|
@@ -26,6 +31,7 @@ Vacca G. Overview of Open Source Software for Close Range Photogrammetry. ISPRS-
   | WebODM            |    3.545.806 points     |
 
 
+* Further paper: Burdziakowski, P. (2017). Evaluation of open drone map toolkit for geodetic grade aerial drone mapping–case study.
 
 ## Installation
 
@@ -150,12 +156,20 @@ docker exec -ti 5d402bd522f3 bash
 
 *But I did not manage to run ODM commands within the container*
 
-## Go further II: Install ODM 
+## Go further II: Install ODM docker
 
+
+
+### Include Gcps
+Gcps can be used as text file as followed: 
+
+* coordinate system descriptionx1 y1 z1 pixelx1 pixely1 imagename1x2 y2 z2 pixelx2 pixely2 imagename2x3 y3 z3 pixelx3 pixely3 imagename3
+
+* WGS84 UTM 10N544256.7 5320919.9 5 3044 2622 IMG_0525.jpg544157.7 5320899.2 5 4193 1552 IMG_0585.jpg544033.4 5320876.0 5 1606 2763 IMG_0690
 
 
 
 ## Further reading
-
 * OpenDroneMap Manual: https://docs.opendronemap.org
+
 
