@@ -37,7 +37,7 @@ Vacca G. Overview of Open Source Software for Close Range Photogrammetry. ISPRS-
 
 Ways to install ODM:
 * Docker (Windows, MacOS, Linux)
-* Natively using Ubuntu 16.04 or later (or with Virtual Machine e.g. vagrant)
+* Natively using Ubuntu 16.04 or later (or with a Virtual Machine)
 * Windows WebODM installer is sold
  https://WebODM.org
 
@@ -104,7 +104,6 @@ Uploading to VM Server sometimes is "incomplete":https://community.opendronemap.
 
 ## Launch WebODM
 
-
 ```
 1. Start container: ./webodm.sh start
 2. Launch in browser: http://localhost:8000/dashboard/
@@ -158,7 +157,13 @@ docker exec -ti 5d402bd522f3 bash
 
 ## Go further II: Install ODM docker
 
+https://docs.opendronemap.org/installation.html#install-on-ubuntu-debian
 
+* Example run to process imagery: 
+
+```
+Run: docker run -ti --rm -v /my/project:/datasets/code opendronemap/odm --project-path /datasets
+```
 
 ### Include Gcps
 Gcps can be used as text file as followed: 
