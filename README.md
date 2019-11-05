@@ -89,6 +89,9 @@ Further a virtual machine in the Ova2.0 (Open virtualisation) was generated; Web
 
 OSGEOLive: https://live.osgeo.org/en/index.html
 
+The virtual machine can be downloaded at: https://drive.google.com/file/d/1E40hDe8fznzUccU4wOVRunYf505ryJ9Q/view?usp=sharing
+It´s an ova container, for VirtualBox. If you use it on you own machine, you have to be aware of the specs (the VM uses 16GB of RAM and 4 cores; this and the mounted folders have to be adapted to your needs). 
+
 #### Server based installation
 
 For your convencience WebODM was installed on a virtualisation server and can be used by you on request. The URL of the server is: http://141.89.192.147:8000/ The admin acount to enter the interface is:
